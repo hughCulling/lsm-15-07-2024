@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "Sign Up | Live Stream Music",
+};
+
 export default function SignUpPage() {
   return (
     <>

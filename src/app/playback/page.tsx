@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "Playback | Live Stream Music",
+};
+
 export default function PlaybackPage() {
   return (
     <>

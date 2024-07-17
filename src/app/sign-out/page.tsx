@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "Sign Out | Live Stream Music",
+};
+
 export default function SignOutPage() {
   return (
     <>
