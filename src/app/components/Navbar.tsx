@@ -1,22 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useUser } from "@auth0/nextjs-auth0/client";
 import Status from "@/app/components/Status";
 
 export default function Navbar() {
-  // const { user, error, isLoading } = useUser();
-  // let status = "";
-
-  // if (isLoading) return <div>Loading...</div>;
-  // if (error) return <div>{error.message}</div>;
-
-  // if (user) {
-  //   status = `Signed in as: ${user.name}`;
-  // } else {
-  //   status = "User: not signed in";
-  // }
-
   return (
     <>
       <Link href="/">Index</Link>
@@ -27,12 +14,13 @@ export default function Navbar() {
       <span> | </span>
       <Link href="/sign-up">Sign Up</Link>
       <span> | </span>
-      <a href="/api/auth/login">Sign In</a>
+      {/* Anchor tags are used instead of Link components as the latter
+       are meant to perfrom client-side transitions between pages. */}
+      <a href="/api/auth/login">Login</a>
       <span> | </span>
       <Link href="/sign-in">User</Link>
       <span> | </span>
-      <a href="/api/auth/logout">Sign Out</a>
-      {/* <span className="status">{status}</span> */}
+      <a href="/api/auth/logout">Logout</a>
       <Status />
     </>
   );

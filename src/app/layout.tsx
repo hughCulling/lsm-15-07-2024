@@ -1,5 +1,8 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
+// Makes authentication state of users available to all pages.
+// Authentication state exposed by 'UserProvider' can be accessed
+// in any Client Component using the 'useUser()' hook.
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 
 export const metadata = {
