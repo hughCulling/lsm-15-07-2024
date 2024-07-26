@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function BroadcastComponent() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [client, setClient] = useState<any>(null);
 
   useEffect(() => {
     async function retrieveMediaStream(client: any, streamConfig: any) {
@@ -43,6 +44,7 @@ export default function BroadcastComponent() {
           });
           console.log("IVSBroadcastClient initialized:", client);
           // Add your IVSBroadcast related code here
+
           // Attach the preview to the canvas element
           const previewEl = canvasRef.current;
           if (previewEl) {
@@ -51,6 +53,9 @@ export default function BroadcastComponent() {
           }
           // Retrieve and add media streams
           retrieveMediaStream(client, IVSBroadcastClient.BASIC_LANDSCAPE);
+
+          // Save the client to the state
+          setClient(client);
         })
         .catch((err) => {
           console.error("Failed to load IVSBroadcastClient", err);
@@ -58,10 +63,40 @@ export default function BroadcastComponent() {
     }
   }, []);
 
+  const startBroadcast = () => {
+    if (client) {
+      const streamKey =
+        "sk_eu-west-1_zXgl164D4daF_vYjfLYlabad2B2uW3vhPwfQsI8IeRr"; // Replace with your actual stream key
+      client
+        .startBroadcast(streamKey)
+        .then((result) => {
+          console.log("I am successfully broadcasting!");
+        })
+        .catch((error) => {
+          console.error(
+            "Something drastically failed while broadcasting!",
+            error
+          );
+        });
+    }
+  };
+
+  const stopBroadcast = () => {
+    if (client) {
+      client.stopBroadcast();
+      console.log("Broadcast stopped.");
+    }
+  };
+
   return (
     <>
       <div id="broadcast">
         <canvas id="preview" ref={canvasRef} width="640" height="360"></canvas>
+        <br />
+        <button onClick={startBroadcast}>Start Broadcast</button>
+        <br />
+        <br />
+        <button onClick={stopBroadcast}>Stop Broadcast</button>
       </div>
     </>
   );
