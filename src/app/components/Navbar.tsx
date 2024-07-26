@@ -8,7 +8,7 @@ export default function Navbar() {
     <>
       <Link href="/">Index</Link>
       <span> | </span>
-      <Link href="/sign-in">Broadcast</Link>
+      <Link href="/broadcast">Broadcast</Link>
       <span> | </span>
       <Link href="/playback">Playback</Link>
       <span> | </span>
