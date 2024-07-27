@@ -69,10 +69,12 @@ export default function BroadcastComponent() {
         "sk_eu-west-1_zXgl164D4daF_vYjfLYlabad2B2uW3vhPwfQsI8IeRr"; // Replace with your actual stream key
       client
         .startBroadcast(streamKey)
-        .then((result) => {
+        .then((result: any) => {
+          // Specify the type of result
           console.log("I am successfully broadcasting!");
         })
-        .catch((error) => {
+        .catch((error: any) => {
+          // Specify the type of error
           console.error(
             "Something drastically failed while broadcasting!",
             error
