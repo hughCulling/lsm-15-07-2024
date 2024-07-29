@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import Status from "@/app/components/Status";
+import BroadcastLink from "./BroadcastLink";
 
 export default function Navbar() {
   return (
     <>
       <Link href="/">Index</Link>
       <span> | </span>
-      <Link href="/broadcast">Broadcast</Link>
+      <BroadcastLink />
       <span> | </span>
       <Link href="/playback">Playback</Link>
       <span> | </span>
