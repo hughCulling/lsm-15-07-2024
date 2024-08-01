@@ -13,8 +13,6 @@ export default function Navbar() {
       <span> | </span>
       <Link href="/playback">Playback</Link>
       <span> | </span>
-      <Link href="/sign-up">Sign Up</Link>
-      <span> | </span>
       {/* Anchor tags are used instead of Link components as the latter
        are meant to perfrom client-side transitions between pages. */}
       <a href="/api/auth/login">Login</a>

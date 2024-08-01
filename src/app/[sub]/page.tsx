@@ -1,3 +1,5 @@
+// This page is supposed to catch user_ids and allow users to broadcast to their own IVS channels.
+
 "use client";
 
 import dynamic from "next/dynamic";
@@ -14,10 +16,13 @@ const BroadcastComponent = dynamic(
 );
 
 export default function BroadcastPage() {
+  // 'useState()' here ensures that the streamKey is available outside of it's defined scope.
   const [myVariable, setMyVariable] = useState("");
   const { user, error, isLoading } = useUser();
 
+  // This 'useEffect()' hook only runs when 'user' is defined.
   useEffect(() => {
+    // The 'user_id' is extracted from the session and put into the request config along with the Management API Token.
     if (user) {
       console.log(`user.sub = ${user.sub}`);
 
@@ -32,6 +37,7 @@ export default function BroadcastPage() {
         },
       };
 
+      // The user's 'streamKey' is extracted from their 'metadata' to be passed to the <BroadcastComponent />.
       axios
         .request(config)
         .then((response) => {
