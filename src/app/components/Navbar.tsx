@@ -17,8 +17,6 @@ export default function Navbar() {
        are meant to perfrom client-side transitions between pages. */}
       <a href="/api/auth/login">Login</a>
       <span> | </span>
-      <Link href="/sign-in">User</Link>
-      <span> | </span>
       <a href="/api/auth/logout">Logout</a>
       <Status />
     </>
