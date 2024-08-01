@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
-export default function BroadcastComponent() {
+export default function BroadcastComponent(props: any) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [client, setClient] = useState<any>(null);
 
@@ -65,8 +65,9 @@ export default function BroadcastComponent() {
 
   const startBroadcast = () => {
     if (client) {
-      const streamKey =
-        "sk_eu-west-1_zXgl164D4daF_vYjfLYlabad2B2uW3vhPwfQsI8IeRr"; // Replace with your actual stream key
+      // const streamKey =
+      // "sk_eu-west-1_zXgl164D4daF_vYjfLYlabad2B2uW3vhPwfQsI8IeRr"; // Replace with your actual stream key
+      const streamKey = props.streamKey;
       client
         .startBroadcast(streamKey)
         .then((result: any) => {
