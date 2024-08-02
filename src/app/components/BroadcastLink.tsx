@@ -15,6 +15,6 @@ export default function BroadcastLink() {
     return <Link href={`${userPage}`}>Broadcast</Link>;
   } else {
     console.log("User: not signed in");
-    return <Link href="/broadcast">Broadcast</Link>;
+    return <Link href="/">Broadcast</Link>;
   }
 }
