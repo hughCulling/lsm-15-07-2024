@@ -43,7 +43,7 @@ export default function BroadcastPage() {
 
   getToken();
 
-  // This 'useEffect()' hook only runs when 'user' is defined.
+  // This 'useEffect()' hook only runs when 'user' and 'token' are defined.
   useEffect(() => {
     // The 'user_id' is extracted from the session and put into the request config along with the Management API Token.
     if (user) {

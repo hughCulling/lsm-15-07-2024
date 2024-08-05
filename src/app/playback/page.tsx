@@ -11,7 +11,7 @@ export default function PlaybackPage() {
       <video id="video-player" playsInline></video>
       <Script
         src="https://player.live-video.net/1.30.0/amazon-ivs-player.min.js"
-        // Code is run obly once script is fully loaded.
+        // Code is run only once script is fully loaded.
         onLoad={() => {
           const IVSPlayer = (window as any).IVSPlayer;
 
