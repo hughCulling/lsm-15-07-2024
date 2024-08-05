@@ -25,7 +25,7 @@ export default function RootLayout({
           <hr />
           {children}
           <hr />
-          <p>Author: Hugh Wilf Culling</p>
+          <p>Author: Hugh Wilfred Culling</p>
           <p>
             <a href="mailto:hughculling@icloud.com">hughculling@icloud.com</a>{" "}
           </p>
