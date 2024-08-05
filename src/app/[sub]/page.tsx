@@ -21,28 +21,6 @@ export default function BroadcastPage() {
   const [token, setToken] = useState("");
   const { user, error, isLoading } = useUser();
 
-  // var options = {
-  //   method: "POST",
-  //   url: "https://dev-acqqi6nb00ynyme4.us.auth0.com/oauth/token",
-  //   headers: { "content-type": "application/x-www-form-urlencoded" },
-  //   data: new URLSearchParams({
-  //     grant_type: "client_credentials",
-  //     client_id: "9D916kiBDyY2ZTi9Wo3VRvGO6hvttKql",
-  //     client_secret:
-  //       "0oRelwLcECBnbqcIIgeasJC48gi2Zht-wGcdMJCNnCyDBQDvVI72sinP4k5k4Df-",
-  //     audience: "https://dev-acqqi6nb00ynyme4.us.auth0.com/api/v2/",
-  //   }),
-  // };
-
-  // axios
-  //   .request(options)
-  //   .then(function (response) {
-  //     console.log(response.data);
-  //   })
-  //   .catch(function (error) {
-  //     console.error(error);
-  //   });
-
   const getToken = async () => {
     try {
       const response = await fetch("/api/get-token", {
