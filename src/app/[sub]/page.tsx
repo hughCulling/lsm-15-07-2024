@@ -64,7 +64,8 @@ export default function BroadcastPage() {
       axios
         .request(config)
         .then((response) => {
-          const userStreamKey = response.data.user_metadata.stream_key;
+          const userStreamKey =
+            response.data.user_metadata.ivsChannel.streamKey;
           console.log(`userStreamKey = ${userStreamKey}`);
           setMyVariable(userStreamKey);
         })
