@@ -1,7 +1,8 @@
-// app/api/get-token/route.js
 import { NextResponse } from "next/server";
 import axios from "axios";
 
+// This route handler performs a POST operation to the 'https://dev-acqqi6nb00ynyme4.us.auth0.com/oauth/token'
+// endpoint to ask for a Management API v2 token.
 export async function POST() {
   const options = {
     method: "POST",

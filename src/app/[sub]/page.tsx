@@ -21,6 +21,7 @@ export default function BroadcastPage() {
   const [token, setToken] = useState("");
   const { user, error, isLoading } = useUser();
 
+  // This function calls a route handler and saves the token it receives to be used in the request to extract 'user_metadata'.
   const getToken = async () => {
     try {
       const response = await fetch("/api/get-token", {
