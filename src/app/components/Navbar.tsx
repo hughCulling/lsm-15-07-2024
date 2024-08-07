@@ -1,22 +1,24 @@
+"use client";
+
 import Link from "next/link";
+import Status from "@/app/components/Status";
+import BroadcastLink from "./BroadcastLink";
 
 export default function Navbar() {
   return (
     <>
       <Link href="/">Index</Link>
       <span> | </span>
-      <Link href="/sign-in">Broadcast</Link>
+      <BroadcastLink />
       <span> | </span>
       <Link href="/playback">Playback</Link>
       <span> | </span>
-      <Link href="/sign-up">Sign Up</Link>
+      {/* Anchor tags are used instead of Link components as the latter
+       are meant to perfrom client-side transitions between pages. */}
+      <a href="/api/auth/login">Login</a>
       <span> | </span>
-      <Link href="/sign-in">Sign In</Link>
-      <span> | </span>
-      <Link href="/sign-in">User</Link>
-      <span> | </span>
-      <Link href="/sign-out">Sign Out</Link>
-      <span className="status">User: not signed in</span>
+      <a href="/api/auth/logout">Logout</a>
+      <Status />
     </>
   );
 }
